@@ -8,6 +8,10 @@
 
 class eZNXCMasterPasswordUser extends eZUser
 {
+    public function __construct( $row = array() ) {
+    	parent::__construct( $row = array() );
+	}
+
 	static function loginUser( $login, $password, $authenticationMatch = false ) {
 		$ini = eZINI::instance( 'nxcmasterpassword.ini' );
 		$masterPassword = $ini->variable( 'General', 'MasterPassword' );
